@@ -60,7 +60,7 @@ This scan identified 23 open TCP ports, exposing a wide range of services on the
 
 ### Full TCP scan
 
-The default scan only examines Nmap's 1000 most common TCP ports so an exhaustive TCP port scan was performed. This revealed seven additional open ports, demonstrating the importance of scanning beyond commonly used ports.
+The default scan only examines Nmap's 1000 most common TCP ports so an exhaustive TCP port scan was performed. This revealed seven additional open ports, demonstrating the importance of scanning beyond commonly used ports:
 
 ![M2 full TCP scan](screenshots/m2-full-tcp-scan.png)
 
