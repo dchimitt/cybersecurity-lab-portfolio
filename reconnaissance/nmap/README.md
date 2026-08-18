@@ -43,6 +43,7 @@ This scan confirmed that all three machines were reachable on the isolated netwo
 ### Initial Scan
 
 The lab was initiated with Nmap scans on an intentionally vulnerable system. The default Nmap command scanned the top 1000 most common TCP ports:
+
 ![M2 initial TCP scan](screenshots/m2-1000-tcp-scan.png)
 
 This scan identified 23 open TCP ports, exposing a wide range of services on the M2 VM. The following table lists some of these services and their associated purposes:
@@ -60,11 +61,13 @@ This scan identified 23 open TCP ports, exposing a wide range of services on the
 ### Full TCP scan
 
 The default scan only examines Nmap's 1000 most common TCP ports so an exhaustive TCP port scan was performed. This revealed seven additional open ports, demonstrating the importance of scanning beyond commonly used ports.
+
 ![M2 full TCP scan](screenshots/m2-full-tcp-scan.png)
 
 ### Services, Versions, and Operating Systems
 
 Next, service and OS detection was used to identify the software/versions running on open ports and estimate the VM's OS:
+
 ![M2 combined TCP scan](screenshots/m2-combined-scan.png)
 
 This provided significantly more information than the initial scan. For example, Nmap identified ISC BIND version 9.4.2 running on port 53/tcp.
@@ -72,6 +75,7 @@ This provided significantly more information than the initial scan. For example,
 ### UDP Port Scan
 
 UDP scanning was significantly slower than TCP scanning, and further research explained that this is due to the lack of acknowledgment replies which are present in the TCP handshake process. After the initial scan took too long to complete, a more limited scan of the top 100 most common ports was conducted:
+
 ![M2 UDP scan](screenshots/m2-udp-scan.png)
 
 This scan demonstrated that UDP services can also contribute to a host's attack surface. It also showed that the same port number can be open over both TCP and UDP protocols.
@@ -80,6 +84,7 @@ This scan demonstrated that UDP services can also contribute to a host's attack 
 ### Attempted Nmap Scan of W10
 
 A full TCP scan resulted in all 1000 scanned ports being classified as filtered:
+
 ![Attempted W10 Scan](screenshots/w10-filtered-scan.png)
 
 A limited UDP scan also produced no identifiable open ports.
